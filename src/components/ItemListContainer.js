@@ -1,8 +1,10 @@
 import React from 'react'
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
+  
   return (
-    <div>Bienvenid@ a la web del mejor sushi!</div>
+    <p>Bienvenido {props.msjPropos} sushimaniaco dale amor a este sitio</p>
+    
   )
 }
 

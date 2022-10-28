@@ -5,7 +5,7 @@ import CartWidget from './CartWidget'
 import { GiHamburgerMenu, GiKnifeFork } from "react-icons/gi";
 
 
-const PAGES  =["Home","Nosotros", "Productos", "Contactanos"]
+const PAGES  =["Home","Combinados", "Tempuras", "Postres y Bebidas", "Contactanos"]
 
 const NavBar = () => {
 
