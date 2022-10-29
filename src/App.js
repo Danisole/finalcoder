@@ -10,7 +10,7 @@ function App() {
     <>
     <BrowserRouter>
       <NavBar/>
-      <ItemListContainer msjPropos="mi tutor coder"/>
+      <ItemListContainer/>
     </BrowserRouter>
       
     </>
