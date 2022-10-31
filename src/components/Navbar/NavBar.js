@@ -15,7 +15,10 @@ const NavBar = () => {
     <Container>
         <Wrapper>
             <LogoContainer>
-                <img src={logoAppBar} alt='logoSushi' style={{ width: 70, height:"auto" }} />
+                <Link to="/">
+                    <img src={logoAppBar} alt='logoSushi' style={{ width: 70, height:"auto" }} />
+
+                </Link>
             </LogoContainer>
 
             <MobilIcon onClick={()=>setShowMobileMenu(!showMobileMenu)}>
@@ -27,14 +30,15 @@ const NavBar = () => {
 
                 {PAGES.map((page)=>(
                     <MenuItem>
-                    <MenuItemLink>
-                        <Link to={page.to} style={{ color: "white", textDecoration: "none"}}>{page.link}</Link>
-                    </MenuItemLink>
+                    <Link to={page.to} style={{ textDecoration: "none"}}>
+                        <MenuItemLink>{page.link}</MenuItemLink>
+                    </Link>
+                    
                 </MenuItem>)
                 )}
 
             </Menu>
-
+            
             <LogoCart>
                 <CartWidget/>
             </LogoCart>

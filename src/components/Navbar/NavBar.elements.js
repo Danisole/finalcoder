@@ -4,7 +4,7 @@ export const Container = styled.div`
     width: 100%;
     height: 100px;
     padding: 5px 10px;
-    background-color: #343a40;
+    background-color: #18191a;
 `
 export const Wrapper = styled.div`
     width: 100%;
@@ -74,11 +74,27 @@ export const MenuItemLink = styled.a`
 `
 
 export const LogoCart = styled.div`
-    margin-right: 0.5rem;
+    position: relative;
+    font-size: 1.3rem;
+    margin-right: 1rem;
     display: flex;
     align-items: center;
     color: white;
     cursor: pointer;
+
+
+    span{
+        position: absolute;
+        background-color: red;
+        height: 20px;
+        width: 20px;
+        text-align: center;
+        border-radius: 1rem;
+        border: 1px solid white;
+        top: 17px;
+        color: white;
+        font-size: 1rem;
+    }
 `
 export const MobilIcon = styled.div`
     display: none;
