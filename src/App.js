@@ -3,6 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { Routes, Route } from "react-router-dom";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import Carrito from "./components/Carrito/Carrito";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
+
 
 function App() {
 
@@ -17,7 +19,7 @@ function App() {
 
           <Route path='/category/:cat' element={<ItemListContainer/>} />
 
-          <Route path='/item/:id' element={<ItemListContainer/>} />
+          <Route path='/item/:id' element={<ItemDetailContainer/>} />
 
           <Route path='/contacto' element={<p>Contacto</p>} />
 

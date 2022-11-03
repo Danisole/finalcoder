@@ -1,10 +1,11 @@
+
 export const productosIniciales =[
 
     {
         id: 1,
         title: "Combinado Sea",
         descripcion:"Combinado de mar",
-        img:"../assets/img/combinado1.jpg",
+        img:"./combinado1.jpg",
         category:"combinados",
         precio: 2940
     },

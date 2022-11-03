@@ -1,7 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { ProductosCard, BtnStyled } from './ItemStyled'
 
-const Item = ({title, img, descripcion, precio}) => {
+const Item = ({title, img, descripcion, precio, id}) => {
   return (
 
       <ProductosCard>
@@ -11,7 +12,7 @@ const Item = ({title, img, descripcion, precio}) => {
         <p>{descripcion}</p>
         <p>${precio}</p>
 
-        <BtnStyled>Ver mas</BtnStyled>
+        <BtnStyled><Link to={`/item/${id}`} style={{color:'white', textDecoration: "none"}}>Ver mas</Link></BtnStyled>
 
       </ProductosCard>
 
