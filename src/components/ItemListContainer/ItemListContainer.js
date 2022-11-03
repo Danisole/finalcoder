@@ -12,9 +12,15 @@ const ItemListContainer = () => {
   console.log(cat)
 
     useEffect(()=>{
-     
+   
     if(cat){
       getProductsByCat(cat)
+      .then(res=>{
+        setItems(res)
+      })
+      .catch(err =>{
+        console.log("error getProducts")
+      })
     }else{
 
       getProducts()
