@@ -2,10 +2,10 @@ import ItemCount from "../ItemCount/ItemCount"
 
 
 
-const ItemDetails = () => {
+const ItemDetails = ({product}) => {
   return (
     <>
-    <div>hola</div>
+    <div>{product.title}</div>
     <ItemCount/>
     </>
   )
