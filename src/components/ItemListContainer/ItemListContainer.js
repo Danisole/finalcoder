@@ -1,38 +1,34 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../ItemList/ItemList'
-import { productosIniciales } from '../data/Products'
+import { getProducts, getProductsByCat } from "../utils/Utils"
+
 
 const ItemListContainer = () => {
 
   const [items, setItems] = useState([])
   const {cat} = useParams()
+  
+  console.log(cat)
 
     useEffect(()=>{
+     
+    if(cat){
+      getProductsByCat(cat)
+    }else{
 
-      if(!cat){
-        console.log("pido todo")
-      }else{
-        console.log("pido solo" + cat)
-      }
-
-      let simulacionPedido = new Promise((res)=>{
-
-        setTimeout(()=>{
-          res(productosIniciales)
-          console.log(productosIniciales)
-        },2000)
-      })
-
-      simulacionPedido
-
-      .then((respuesta)=>{
+      getProducts()
+        .then((respuesta)=>{
+          console.log("producto cargado uwu")
           setItems(respuesta)
-      })
 
-      .catch((error)=>{
-          console.log(error)
-      })
+        })
+        .catch((error) =>{
+          console.log("nuevo error")
+        })
+    }
+
+      
     },[cat])
 
   return (

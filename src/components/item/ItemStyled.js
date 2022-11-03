@@ -25,6 +25,7 @@ h2{
 p{
     color: #666;
     font-size: 1.2rem;
+    margin: 8px;
 }
 `
 export const BtnStyled = styled.button` 
