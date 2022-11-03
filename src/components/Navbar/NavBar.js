@@ -6,7 +6,7 @@ import { GiHamburgerMenu, GiKnifeFork } from "react-icons/gi";
 import { Link } from 'react-router-dom'
 
 
-const PAGES  =[{to:"/", link:"Home"},{to:"/combinado", link:"Combinado"}, {to:"/tempuras", link:"Tempuras"}, {to:"/postres&bebidas", link:"Postres y Bebidas"}, {to:"/contacto", link:"Contactanos"}]
+const PAGES  =[{id: 1, to:"/", link:"Home"},{id: 2, to:"/category/combinados", link:"Combinado"}, {id: 3, to:"/category/tempuras", link:"Tempuras"}, {id: 4, to:"/category/postres&bebidas", link:"Postres y Bebidas"}, {id: 5, to:"/contacto", link:"Contactanos"}]
 
 const NavBar = () => {
 
@@ -29,8 +29,8 @@ const NavBar = () => {
             <Menu open={showMobileMenu}>
 
                 {PAGES.map((page)=>(
-                    <MenuItem>
-                    <Link to={page.to} style={{ textDecoration: "none"}}>
+                    <MenuItem key={page.id}>
+                    <Link  to={page.to} style={{ textDecoration: "none"}}>
                         <MenuItemLink>{page.link}</MenuItemLink>
                     </Link>
                     
@@ -40,7 +40,7 @@ const NavBar = () => {
             </Menu>
             
             <LogoCart>
-                <CartWidget/>
+                <Link to={"/Carrito"} style={{color:'white', textDecoration: "none"}}><CartWidget/></Link>
             </LogoCart>
 
         </Wrapper>
