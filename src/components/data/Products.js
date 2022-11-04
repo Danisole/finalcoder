@@ -12,7 +12,7 @@ export const productosIniciales =[
     {
         id: 2,
         title: "Combinado Exotico",
-        descripcion:"combinado de los mas exoticos productos",
+        descripcion:"Los mas exoticos productos",
         img:"/assets/combinado2.jpg",
         category:"combinados",
         precio: 1540

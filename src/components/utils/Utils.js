@@ -23,7 +23,7 @@ export const getProductsByCat = (category) =>{
 export const getProductsById = (id)=>{
     return new Promise((res)=>{
         setTimeout(() =>{
-            res((productosIniciales.find(item=>item.id === id)))
+            res((productosIniciales.find(item=>item.id === parseInt(id))))
         }, 1000)
     })
 }

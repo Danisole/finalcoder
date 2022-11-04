@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const ProductosCard = styled.div`
-background-color: white;
+background-color: #b2b2b2;
 width: 300px;
 height: 400px;
 border-radius: 15px;
@@ -14,16 +14,17 @@ align-items: center;
 img{
     width: 100%;
     margin-bottom: 1rem;
+    border-radius: 7px;
 }
 h2{
     font-weight: 600;
     margin: 0;
     display: flex;
     text-align: center;
-    color: #666;
+    color: #595959;
 }
 p{
-    color: #666;
+    color: #595959;
     font-size: 1.2rem;
     margin: 8px;
 }

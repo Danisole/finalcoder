@@ -5,18 +5,18 @@ import { getProductsById } from '../utils/Utils'
 
 const ItemDetailContainer = () => {
 
-    const [product, setProduct] = useState({})
-    const {productId} = useParams({})
+    const [product, setProduct] = useState([])
+    const {productId} = useParams()
 
     useEffect(()=>{
         getProductsById(productId)
         .then(res=> setProduct(res))
         
-    }, {})
-    
+    }, [productId])
+    console.log(product)
   return (
     <div>
-      { productId ? <h1>Cargando...</h1> : <ItemDetails product={product}/> }
+      { !product ? <h1>Cargando...</h1> : <ItemDetails product={product}/> }
     </div>
   )
 }
