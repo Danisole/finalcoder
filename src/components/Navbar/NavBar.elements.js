@@ -2,9 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 100px;
+    height: 80px;
     padding: 5px 10px;
     background-color: #18191a;
+    position: fixed;
 `
 export const Wrapper = styled.div`
     width: 100%;

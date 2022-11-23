@@ -8,4 +8,5 @@ grid-template-columns:repeat(auto-fit, 500px);
 row-gap: 3.5rem;
 width: 100%;
 padding: 1rem 0;
+padding-top: 80px;
 `

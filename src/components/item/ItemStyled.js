@@ -14,7 +14,7 @@ justify-content: center;
 align-items: center;
 
 &:hover{
-box-shadow: 15px 15px 20px #343a40, -15px -15px 20px #495057;
+box-shadow: 10px 10px 15px #202020;
 }
 
 
