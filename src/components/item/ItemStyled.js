@@ -2,15 +2,22 @@ import styled from "styled-components";
 
 
 export const ProductosCard = styled.div`
-background-color: #b2b2b2;
+background-color: #212529 ;
 width: 300px;
 height: 400px;
 border-radius: 15px;
 padding: 1rem;
+margin-top: 5vh;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
+&:hover{
+box-shadow: 15px 15px 20px #343a40, -15px -15px 20px #495057;
+}
+
+
 img{
     width: 100%;
     margin-bottom: 1rem;
@@ -21,10 +28,10 @@ h2{
     margin: 0;
     display: flex;
     text-align: center;
-    color: #595959;
+    color: #b2b2b2;
 }
 p{
-    color: #595959;
+    color: #b2b2b2;
     font-size: 1.2rem;
     margin: 8px;
 }
@@ -34,9 +41,12 @@ padding: 0.8rem 1.5rem;
 outline: none;
 border: none;
 border-radius: 10px;
-background-color: red;
+background-color: #bf0603;
 color: white;
 text-transform: uppercase;
 font-weight: 400;
 cursor: pointer;
+&:hover{
+    background-color: #ef233c ;
+}
 `

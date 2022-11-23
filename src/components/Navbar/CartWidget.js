@@ -1,17 +1,21 @@
 import { BsFillBagFill } from "react-icons/bs";
-import React from 'react'
-import  {LogoCart}  from "./NavBar.elements"
+import React, { useContext } from 'react'
+import { contexto } from "../CustomProvider";
+import { Link } from "react-router-dom";
 
 
 const CartWidget = () => {
 
-  return (
-   
-      <LogoCart>
-        <BsFillBagFill />
-        <span>3</span>
-      </LogoCart>
+  const valorDelContexto = useContext(contexto)
   
+  return (
+
+    <Link to={"/Carrito"} style={{color:'white', textDecoration: "none"}}>
+      
+        <BsFillBagFill />
+        {<span>{valorDelContexto.cantidad}</span>}
+      
+    </Link>
   )
 }
 

@@ -1,6 +1,8 @@
 import { productosIniciales } from '../data/Products'
 
 
+
+
 const generatePromise = (operation, time = 1500)=>{
 
     return  new Promise((res) =>{

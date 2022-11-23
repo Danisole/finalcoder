@@ -7,15 +7,17 @@ export const productosIniciales =[
         descripcion:"Combinado de mar",
         img:"/assets/combinado1.jpg",
         category:"combinados",
-        precio: 2940
+        precio: 2940,
+        stock: 7
     },
     {
         id: 2,
         title: "Combinado Exotico",
-        descripcion:"Los mas exoticos productos",
+        descripcion:"Exoticos ingredientes",
         img:"/assets/combinado2.jpg",
         category:"combinados",
-        precio: 1540
+        precio: 1540,
+        stock: 3
     },
     {
         id: 3,
@@ -23,7 +25,8 @@ export const productosIniciales =[
         descripcion:"Tempura mixta",
         img:"/assets/tempura1.jpg",
         category:"tempuras",
-        precio: 1260
+        precio: 1260, 
+        stock:5
     },
     {
         id: 4,
@@ -31,7 +34,8 @@ export const productosIniciales =[
         descripcion:"Tempura de langostinos",
         img:"/assets/tempura2.jpg",
         category:"tempuras",
-        precio: 1858
+        precio: 1858, 
+        stock:2
     },
     {
         id: 5,
@@ -39,7 +43,8 @@ export const productosIniciales =[
         descripcion:"Tejas de chocolate y jengibre",
         img:"/assets/postre1.jpg",
         category:"postres&bebidas",
-        precio: 989
+        precio: 989,
+        stock:5
     },
     {
         id: 6,
@@ -47,7 +52,8 @@ export const productosIniciales =[
         descripcion:"Copa de mousse Matcha",
         img:"/assets/postre2.jpg",
         category:"postres&bebidas",
-        precio: 1264
+        precio: 1264, 
+        stock: 3
     },
     {
         id: 7,
@@ -55,7 +61,8 @@ export const productosIniciales =[
         descripcion:"Licor de arroz",
         img:"/assets/sake.jpg",
         category:"postres&bebidas",
-        precio: 3000
+        precio: 3000, 
+        stock:8
     },
 
 ]

@@ -4,30 +4,32 @@ import { BtnStyled } from '../item/ItemStyled'
 
 
 
-const ItemCount = () =>{
+const ItemCount = ({handleOnAdd}) =>{
 
     const [count, setCount] = useState(0)
 
-    const handlerSumar = () =>{
-        setCount(count + 1 )
-    }
-
-    const handlerRestar = () =>{
+    const handlerRestar = (e) =>{
+        e.stopPropagation()
         setCount(count - 1 )
     }
 
+    const handlerSumar = (e) =>{
+        e.stopPropagation()
+        setCount(count + 1 )
+    }
+
     const handlerConfirmar = () =>{
-        console.log("producto agregado")
+        handleOnAdd(count)
     }
 
     return(
         <div>
-            <div>
-                <button onClick={handlerSumar}><BsPlusCircle/></button>
+            <div style={{display:"flex"}}>
+                <BtnStyled onClick={handlerRestar}><BsDashCircle/></BtnStyled>
                 <p>{count}</p>
-                <button onClick={handlerRestar}><BsDashCircle/></button>
+                <BtnStyled onClick={handlerSumar}><BsPlusCircle/></BtnStyled>
             </div>
-            <BtnStyled onClick={handlerConfirmar}>Confirmar</BtnStyled>
+            <BtnStyled onClick={handlerConfirmar} >Confirmar</BtnStyled>
         </div>
     )
 }

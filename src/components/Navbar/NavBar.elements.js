@@ -91,7 +91,7 @@ export const LogoCart = styled.div`
         text-align: center;
         border-radius: 1rem;
         border: 1px solid white;
-        top: 17px;
+        top: 45px;
         color: white;
         font-size: 1rem;
     }

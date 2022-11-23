@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
-import { Container, LogoContainer, Menu, MenuItem, MenuItemLink, Wrapper,LogoCart, MobilIcon } from './NavBar.elements'
+import { Container, LogoContainer, Menu, MenuItem, MenuItemLink, Wrapper, MobilIcon, LogoCart } from './NavBar.elements'
 import logoAppBar from '../assets/img/Logotipo_sushi_moderno_negro-removebg-preview.png'
 import CartWidget from './CartWidget'
 import { GiHamburgerMenu, GiKnifeFork } from "react-icons/gi";
 import { Link } from 'react-router-dom'
+import ModalCart from './ModalCart/ModalCart';
+
 
 
 const PAGES  =[{id: 1, to:"/", link:"Home"},{id: 2, to:"/category/combinados", link:"Combinado"}, {id: 3, to:"/category/tempuras", link:"Tempuras"}, {id: 4, to:"/category/postres&bebidas", link:"Postres y Bebidas"}, {id: 5, to:"/contacto", link:"Contactanos"}]
@@ -14,6 +16,7 @@ const NavBar = () => {
   return (
     <Container>
         <Wrapper>
+            <ModalCart/>
             <LogoContainer>
                 <Link to="/">
                     <img src={logoAppBar} alt='logoSushi' style={{ width: 70, height:"auto" }} />
@@ -38,11 +41,11 @@ const NavBar = () => {
                 )}
 
             </Menu>
+        <LogoCart>
+            <CartWidget/>
+        </LogoCart>
             
-            <LogoCart>
-                <Link to={"/Carrito"} style={{color:'white', textDecoration: "none"}}><CartWidget/></Link>
-            </LogoCart>
-
+            
         </Wrapper>
 
     </Container>

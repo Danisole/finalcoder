@@ -12,7 +12,7 @@ const ItemListContainer = () => {
   console.log(cat)
 
     useEffect(()=>{
-   
+
     if(cat){
       getProductsByCat(cat)
       .then(res=>{
