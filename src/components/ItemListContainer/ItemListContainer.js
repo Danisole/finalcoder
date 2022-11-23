@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+
+import { collection, where, query, getDocs, getDoc, doc, addDoc } from "firebase/firestore"
 import ItemList from '../ItemList/ItemList'
-import { getProducts, getProductsByCat } from "../utils/Utils"
+import { db } from '../../firebase'
+
 
 
 const ItemListContainer = () => {
@@ -9,29 +12,41 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([])
   const {cat} = useParams()
   
-  console.log(cat)
-
     useEffect(()=>{
 
+    const productosCollection = collection(db, "productosIniciales")
+
     if(cat){
-      getProductsByCat(cat)
-      .then(res=>{
-        setItems(res)
-      })
-      .catch(err =>{
-        console.log("error getProducts")
-      })
-    }else{
 
-      getProducts()
-        .then((respuesta)=>{
-          console.log("producto cargado uwu")
-          setItems(respuesta)
+      const filtro = query(productosCollection, where("category", "==", cat))
+      const consulta = getDocs(filtro)
 
+      consulta
+        .then((resultado)=>{
+          
+          const productos = resultado.docs.map(doc =>({...doc.data(), id: doc.id}))
+          setItems(productos)
         })
         .catch((error) =>{
-          console.log("nuevo error")
+          console.log(error)
         })
+      
+
+    }else{
+
+      const consulta = getDocs(productosCollection)
+
+      consulta
+        .then((resultado)=>{
+
+        const productos = resultado.docs.map(doc =>({...doc.data(), id:doc.id}))
+        setItems(productos)
+      })
+        .catch((error) =>{
+          console.log(error)
+        })
+
+    
     }
 
       

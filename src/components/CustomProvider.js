@@ -1,5 +1,8 @@
 import React, { createContext, useState } from 'react'
+//import { db } from '../firebase'
+
 export const contexto = createContext()
+
 const { Provider } = contexto
 
 const CustomProvider = ({children}) => {

@@ -5,7 +5,7 @@ import Carrito from "./components/Carrito/Carrito";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import React from "react";
 import CustomProvider from "./components/CustomProvider";
-import { app, } from "./firebase"
+import { app, db } from "./firebase"
 
 
 function App() {

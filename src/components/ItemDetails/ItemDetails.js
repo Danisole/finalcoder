@@ -4,13 +4,13 @@ import { useContext } from "react"
 import { contexto } from "../CustomProvider"
 
 
-const ItemDetails = ({product}) => {
+const ItemDetails = ({producto}) => {
   
   const valorDelContexto = useContext(contexto)
 
   const handleOnAdd = (cantidad)=>{
     console.log("se agrego " + cantidad + " productos")
-    console.log(product)
+    console.log(producto)
   }
 
   const agregarAlCarrito = ()=>{
@@ -20,10 +20,10 @@ const ItemDetails = ({product}) => {
     
     <ProductosCard style={{marginTop:50,background: "none"}}>
 
-     <img src={product.img} alt={product.title}/>
-        <h2>{product.title}</h2>
-        <p>{product.descripcion}</p>
-        <p>${product.precio}</p>
+     <img src={producto.img} alt={producto.title}/>
+        <h2>{producto.title}</h2>
+        <p>{producto.descripcion}</p>
+        <p>${producto.precio}</p>
         <BtnStyled onClick={agregarAlCarrito}>Agregar al carrito</BtnStyled>
         
     <ItemCount handleOnAdd={handleOnAdd} />
