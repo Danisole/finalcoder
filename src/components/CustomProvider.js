@@ -1,26 +1,62 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useContext } from 'react'
 //import { db } from '../firebase'
 
 export const contexto = createContext()
 
 const { Provider } = contexto
 
+export const useCarrito = ()=>{
+  return useContext(contexto)
+}
+
+
 const CustomProvider = ({children}) => {
 
     const [carrito, setCarrito] = useState([])
-    
-        const [total, setTotal] = useState(4)
+    const [total, setTotal] = useState(0)
+    const [cantidadTotal, setCantidadTotal] = useState(0)
+
+        
 
         const vaciarCarrito = ()=>{
           setCarrito([])
           setTotal(0)
     
         }
+
+        const borrarItem = (id) =>{
+          
+        }
+
+        const agregarProducto = (producto, cantidad) =>{
+          
+          if(isInCart.inCart){
+
+
+          }else{
+            console.log("producto nuevo en el carrito")
+        
+            setCarrito([
+                ...carrito, 
+                {...producto, cantidad }
+            ])
+          setTotal(total + producto.price * cantidad)
+          setCantidadTotal(cantidadTotal + cantidad)
+
+          }
+
+        }
+
+        const isInCart = (id) =>{
+            return { inCart:false, item:{}, index:0 }
+        }
     
       const valorDelContexto={
         productos: carrito,
         cantidad: total,
-        vaciarCarrito
+        cantidadTotal: cantidadTotal,
+        vaciarCarrito,
+        agregarProducto: agregarProducto
       }
       console.log(valorDelContexto)
 

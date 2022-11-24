@@ -5,9 +5,9 @@ import { CountBtnStyled } from '../ItemDetailContainer/ItemDetailsContainerStyle
 
 
 
-const ItemCount = ({handleOnAdd}) =>{
+const ItemCount = ({handleOnAdd, init}) =>{
 
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(init)
 
     const handlerRestar = (e) =>{
         e.stopPropagation()

@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const ContenedorDetails = styled.div`
-    height: 910px;
+    padding-top: 100px;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 
 `
 export const ProductCardContainer = styled.div`
@@ -35,6 +36,17 @@ export const ProductCardContainer = styled.div`
         color: #b2b2b2;
         font-size: 1.2rem;
         margin: 6px;
+    }
+
+    @media screen and (max-width: 780px){
+    width: 100%;
+    max-width: 780px;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
     }
 
     

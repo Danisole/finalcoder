@@ -11,11 +11,14 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body{
-    overflow-x: hidden ;
+    overflow-x: hidden;
     background-color: #131415;
     color: white;
     width: 100%;
-    height: auto;
-
+    position: relative;
+    padding-bottom: 80px;
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
 `

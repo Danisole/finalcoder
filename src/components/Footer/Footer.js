@@ -9,6 +9,7 @@ const Footer = () => {
 
     <ContainerFooter>
         <FooterSpan>Sitio creado con  <BsHeart style={{margin: 5, color:"red"}}/>   por Danisol </FooterSpan>
+        <p>© 2022 - Todos los derechos reservados</p>
     </ContainerFooter>
     
   )

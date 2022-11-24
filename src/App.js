@@ -6,6 +6,7 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import React from "react";
 import CustomProvider from "./components/CustomProvider";
 import Footer from "./components/Footer/Footer";
+import Error from "./components/Error/Error"
 
 
 
@@ -32,7 +33,7 @@ function App() {
 
             <Route path='/Carrito' element={<Carrito />} />
 
-            <Route path='*' element={<p>404</p>} />
+            <Route path='*' element={<Error/>} />
 
         </Routes>
         <Footer/>

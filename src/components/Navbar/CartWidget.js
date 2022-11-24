@@ -13,7 +13,7 @@ const CartWidget = () => {
     <Link to={"/Carrito"} style={{color:'white', textDecoration: "none"}}>
       
         <BsFillBagFill />
-        {<span>{valorDelContexto.cantidad}</span>}
+        {<span>{valorDelContexto.cantidadTotal}</span>}
       
     </Link>
   )
