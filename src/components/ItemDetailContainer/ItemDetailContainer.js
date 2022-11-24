@@ -1,9 +1,10 @@
 import React, { useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
-
 import { collection, getDoc, doc } from "firebase/firestore"
 import { db } from '../../firebase'
 import ItemDetails from '../ItemDetails/ItemDetails'
+import { ContainerStyle } from '../Navbar/ModalCart/ModalCartStyle'
+import { ContenedorDetails } from './ItemDetailsContainerStyled'
 
 
 
@@ -29,8 +30,11 @@ const ItemDetailContainer = () => {
     },[])
     
   return (
+    <ContenedorDetails>
+      <ItemDetails producto={{productId, ...item}}/> 
+    </ContenedorDetails>
     
-       <ItemDetails producto={{productId, ...item}}/> 
+       
     
   )
 }

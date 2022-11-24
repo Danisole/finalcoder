@@ -1,6 +1,7 @@
 import React, { useState }from 'react';
 import { BsPlusCircle, BsDashCircle } from "react-icons/bs";
 import { BtnStyled } from '../item/ItemStyled'
+import { CountBtnStyled } from '../ItemDetailContainer/ItemDetailsContainerStyled';
 
 
 
@@ -24,10 +25,10 @@ const ItemCount = ({handleOnAdd}) =>{
 
     return(
         <div>
-            <div style={{display:"flex"}}>
-                <BtnStyled onClick={handlerRestar}><BsDashCircle/></BtnStyled>
+            <div style={{display:"flex", justifyContent:'center', gap:3}}>
+                <CountBtnStyled onClick={handlerRestar}><BsDashCircle/></CountBtnStyled>
                 <p>{count}</p>
-                <BtnStyled onClick={handlerSumar}><BsPlusCircle/></BtnStyled>
+                <CountBtnStyled onClick={handlerSumar}><BsPlusCircle/></CountBtnStyled>
             </div>
             <BtnStyled onClick={handlerConfirmar} >Confirmar</BtnStyled>
         </div>
