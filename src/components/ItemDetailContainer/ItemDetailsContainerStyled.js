@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ContenedorDetails = styled.div`
-    padding-top: 130px;
+    height: 910px;
     display: flex;
     flex-direction: row;
     justify-content: center;

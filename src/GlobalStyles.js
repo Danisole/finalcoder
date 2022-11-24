@@ -14,6 +14,8 @@ body{
     overflow-x: hidden ;
     background-color: #131415;
     color: white;
+    width: 100%;
+    height: auto;
 
 }
 `

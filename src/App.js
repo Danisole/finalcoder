@@ -5,6 +5,9 @@ import Carrito from "./components/Carrito/Carrito";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import React from "react";
 import CustomProvider from "./components/CustomProvider";
+import Footer from "./components/Footer/Footer";
+
+
 
 
 
@@ -32,7 +35,9 @@ function App() {
             <Route path='*' element={<p>404</p>} />
 
         </Routes>
+        <Footer/>
       </BrowserRouter>
+      
 
     </CustomProvider>
 
