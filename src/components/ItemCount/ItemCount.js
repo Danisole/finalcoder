@@ -5,9 +5,9 @@ import { CountBtnStyled } from '../ItemDetailContainer/ItemDetailsContainerStyle
 
 
 
-const ItemCount = ({handleOnAdd, init}) =>{
+const ItemCount = ({handleOnAdd, init, stock}) =>{
 
-    const [count, setCount] = useState(init)
+    const [count, setCount] = useState(parseInt(init))
 
     const handlerRestar = (e) =>{
         e.stopPropagation()
@@ -23,12 +23,14 @@ const ItemCount = ({handleOnAdd, init}) =>{
         handleOnAdd(count)
     }
 
+   
+
     return(
         <div>
             <div style={{display:"flex", justifyContent:'center', gap:3}}>
-                <CountBtnStyled onClick={handlerRestar}><BsDashCircle/></CountBtnStyled>
+                <CountBtnStyled disabled={count <=1} onClick={handlerRestar}><BsDashCircle/></CountBtnStyled>
                 <p>{count}</p>
-                <CountBtnStyled onClick={handlerSumar}><BsPlusCircle/></CountBtnStyled>
+                <CountBtnStyled disabled={count >= stock} onClick={handlerSumar}><BsPlusCircle/></CountBtnStyled>
             </div>
             <BtnStyled onClick={handlerConfirmar} >Confirmar</BtnStyled>
         </div>

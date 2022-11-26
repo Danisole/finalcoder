@@ -5,7 +5,7 @@ export const ProductosCard = styled.div`
 background-color: #212529 ;
 width: 300px;
 height: 400px;
-border-radius: 15px;
+border-radius: 10px;
 padding: 1rem;
 margin-top: 5vh;
 display: flex;

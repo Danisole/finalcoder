@@ -24,14 +24,12 @@ const CustomProvider = ({children}) => {
     
         }
 
-        const borrarItem = (id) =>{
-          
-        }
-
         const agregarProducto = (producto, cantidad) =>{
           
-          if(isInCart.inCart){
-
+          if(isInCart(producto, cantidad)){
+          setCarrito(carrito.map(product =>{
+            return product.id === producto.id ? {...product, cantidad: product.cantidad +cantidad } : product
+          }))
 
           }else{
             console.log("producto nuevo en el carrito")
@@ -40,15 +38,21 @@ const CustomProvider = ({children}) => {
                 ...carrito, 
                 {...producto, cantidad }
             ])
-          setTotal(total + producto.price * cantidad)
+
+          setTotal(total + producto.precio * cantidad)
           setCantidadTotal(cantidadTotal + cantidad)
 
           }
 
         }
+        const clearCarrito = () => setCarrito([]);
 
         const isInCart = (id) =>{
-            return { inCart:false, item:{}, index:0 }
+            return carrito.find(product => product.id ===id) ? true : false;
+        }
+
+        const borrarItem = (id) =>{
+          setCarrito(carrito.filter(product => product.id != id))
         }
     
       const valorDelContexto={
@@ -56,7 +60,10 @@ const CustomProvider = ({children}) => {
         cantidad: total,
         cantidadTotal: cantidadTotal,
         vaciarCarrito,
-        agregarProducto: agregarProducto
+        agregarProducto: agregarProducto,
+        borrarItem,
+        isInCart,
+        clearCarrito
       }
       console.log(valorDelContexto)
 

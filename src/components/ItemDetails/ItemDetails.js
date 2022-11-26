@@ -1,6 +1,5 @@
 import ItemCount from "../ItemCount/ItemCount"
 import { BtnStyled } from "../item/ItemStyled"
-// import { useContext } from "react"
 import { useCarrito } from "../CustomProvider"
 import { ProductCardContainer, ContainerDivs, DetailsDiv } from "../ItemDetailContainer/ItemDetailsContainerStyled"
 import { useState } from "react"
@@ -12,6 +11,7 @@ const ItemDetails = ({producto}) => {
   const { agregarProducto } = useCarrito()
   const [cantidad, setCantidad] = useState(1)
   const [confirmado, setConfirmado] = useState(false)
+
   
   
 
@@ -23,8 +23,11 @@ const ItemDetails = ({producto}) => {
   }
 
   const handleClick =()=>{
+    
     agregarProducto(producto, cantidad)
+    
   }
+
 
 
   return (
@@ -38,13 +41,13 @@ const ItemDetails = ({producto}) => {
         <DetailsDiv>
           <h2>{producto.title}</h2>
           <p>{producto.descripcion}</p>
-          <p>${producto.precio}</p>
+          <p>$ {producto.precio * cantidad}</p>
         </DetailsDiv>
 
         <DetailsDiv>
           {confirmado && <BtnStyled onClick={handleClick} style={{fontSize:10}}>Agregar al carrito</BtnStyled>}
         
-          <ItemCount init={cantidad} handleOnAdd={handleOnAdd} />
+          <ItemCount init={cantidad} stock={producto.stock} handleOnAdd={handleOnAdd} />
         </DetailsDiv>
 
       </ContainerDivs>
