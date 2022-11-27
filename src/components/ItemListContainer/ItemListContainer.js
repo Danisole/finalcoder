@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import { collection, where, query, getDocs, getDoc, doc, addDoc } from "firebase/firestore"
 import ItemList from '../ItemList/ItemList'
 import { db } from '../../firebase'
+import { toast } from 'react-toastify';
 
 
 
@@ -45,17 +46,32 @@ const ItemListContainer = () => {
         .catch((error) =>{
           console.log(error)
         })
-
-    
+ 
     }
 
       
     },[cat])
 
+    let promise = ()=>{
+      
+      const resolveAfter3Sec = new Promise((resolve, reject)=>{
+        setTimeout(reject, 3000)
+      })
+
+        toast.promise(resolveAfter3Sec,{
+          pending: "Cargando productos",
+          success: "Poemise has resolved",
+          position: "top-right",
+          theme: "dark",
+        })
+    }
+
+
+
   return (
   
     <div>
-      { items.length === 0 ? <h1>Cargando...</h1> : <ItemList items={items}/> }
+      { items.length === 0 ? promise() : <ItemList items={items}/> }
     </div>
   )
 }

@@ -4,6 +4,8 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import Carrito from "./components/Carrito/Carrito";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import React from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import CustomProvider from "./components/CustomProvider";
 import Footer from "./components/Footer/Footer";
 import Error from "./components/Error/Error"
@@ -39,7 +41,7 @@ function App() {
         <Footer/>
       </BrowserRouter>
       
-
+      <ToastContainer />
     </CustomProvider>
 
   );

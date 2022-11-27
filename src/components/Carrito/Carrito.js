@@ -1,71 +1,56 @@
+import { useContext } from 'react'
 import { Link } from 'react-router-dom'
-import { useCarrito } from '../CustomProvider'
+import { contexto } from '../CustomProvider'
 import { BtnStyled } from '../item/ItemStyled'
 import { CheckoutContainerPriceStyled, CheckoutContainerProductosStyled,
-          CheckoutEnvioStyled, CheckoutHrStyled, CheckoutSubtotalStyled,
-          CheckoutTotalStyled, ContainerCheckoutStyled, ContainerCart  } from './CarritoStyled';
-import CarritoDetails from './CarritoDetails'
+          CheckoutSubtotalStyled, ContainerCheckoutStyled, ContainerCart,
+           ProductCardContainerCarrito  } from './CarritoStyled';
 import CheckForm from './Form/CheckForm'
-
-
-
 
 const Carrito = () => {
 
- 
+  const { productos, borrarItem, vaciarCarrito } = useContext(contexto)
+  console.log(productos)
 
-  const valorDelContexto = useCarrito()
+      if (productos.length > 0 ){
+        return (
+            <ContainerCheckoutStyled>
+              <CheckoutContainerProductosStyled>
+                <h1>Carrito</h1>
+                {productos.map(item =>
+                    <ProductCardContainerCarrito style={{marginTop: '5rem'}} key={item.id}>
 
-  console.log(valorDelContexto)
+                        <CheckoutSubtotalStyled>Artículo: {item.title}</CheckoutSubtotalStyled>
+                        <CheckoutSubtotalStyled>Unidades: {item.cantidad}</CheckoutSubtotalStyled>
+                        <CheckoutSubtotalStyled>Subtotal: ${item.precio * item.cantidad}</CheckoutSubtotalStyled>
+                        <CheckoutSubtotalStyled>Envio: Gratis</CheckoutSubtotalStyled>
+                    
+                    
+                        <BtnStyled onClick={()=>borrarItem(item.productId)}>borrar</BtnStyled>
+                        <CheckoutContainerPriceStyled>Total: ${item.precio * item.cantidad}</CheckoutContainerPriceStyled>
+                
+                </ProductCardContainerCarrito>
+                )}
+                <div className="checkout">
+                    <BtnStyled  onClick={vaciarCarrito}>Vaciar carrito</BtnStyled>
+                </div>
+            </CheckoutContainerProductosStyled>    
+                
+            </ContainerCheckoutStyled>
+        )}else {
 
+            return(
 
-  if(valorDelContexto.productos.length === 0){
-
-      return (
-
-      <ContainerCart>
-        <h1>Carrito vacio</h1>
-        <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>BACK HOME</Link></BtnStyled>
-      </ContainerCart>
-      )  
+              <ContainerCart>
+                    <h1>No agregaste ningún producto</h1>
+                     <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>Ir a comprar</Link></BtnStyled>
+                    </ContainerCart>
+            
+            )
+        }
 }
 
-  return(
 
-  < ContainerCheckoutStyled> 
-    <CheckoutContainerProductosStyled>
-                      
-        <CarritoDetails key={valorDelContexto.productos.id} product={valorDelContexto.productos}/> 
-        
 
-        <CheckoutContainerPriceStyled>
-          <CheckoutSubtotalStyled>
-            <p>Subtotal</p>
-            <span>$ {valorDelContexto.cantidad}</span>
-          </CheckoutSubtotalStyled>
-          <CheckoutEnvioStyled>
-            <p>Envío:</p>
-            <span>$ 300</span>
-          </CheckoutEnvioStyled>
-          <CheckoutHrStyled />
-          <CheckoutTotalStyled>
-            <p>
-              TOTAL: 
-            </p>
-            <p>$ {valorDelContexto.cantidad + 300}</p>
-          </CheckoutTotalStyled>
-        </CheckoutContainerPriceStyled>
-        <BtnStyled onClick={valorDelContexto.vaciarCarrito} style={{marginTop: 40}}>Vaciar Carrito</BtnStyled>
-      </CheckoutContainerProductosStyled>
-
-      <CheckForm/>
-
-        </ContainerCheckoutStyled>
-  )
-
-    
-    
-  
-}
 
 export default Carrito

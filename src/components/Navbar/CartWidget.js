@@ -15,7 +15,7 @@ const CartWidget = () => {
       
         <BsFillBagFill />
       
-        <span>{cantidadTotal}</span>
+        <span>{cantidadTotal()}</span>
         
         
       

@@ -3,7 +3,7 @@ import { BtnStyled } from "../item/ItemStyled"
 import { useCarrito } from "../CustomProvider"
 import { ProductCardContainer, ContainerDivs, DetailsDiv } from "../ItemDetailContainer/ItemDetailsContainerStyled"
 import { useState } from "react"
-
+import { toast } from 'react-toastify';
 
 
 const ItemDetails = ({producto}) => {
@@ -25,6 +25,17 @@ const ItemDetails = ({producto}) => {
   const handleClick =()=>{
     
     agregarProducto(producto, cantidad)
+
+    toast.success('Producto agregado con exito! dirigete al carrito', {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
     
   }
 

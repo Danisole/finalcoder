@@ -2,7 +2,7 @@ import React, { useState }from 'react';
 import { BsPlusCircle, BsDashCircle } from "react-icons/bs";
 import { BtnStyled } from '../item/ItemStyled'
 import { CountBtnStyled } from '../ItemDetailContainer/ItemDetailsContainerStyled';
-
+import { toast } from 'react-toastify';
 
 
 const ItemCount = ({handleOnAdd, init, stock}) =>{
@@ -20,7 +20,19 @@ const ItemCount = ({handleOnAdd, init, stock}) =>{
     }
 
     const handlerConfirmar = () =>{
+
         handleOnAdd(count)
+        
+        toast.info('Agrega los productos al carrito', {
+            position: "bottom-right",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
     }
 
    

@@ -1,5 +1,6 @@
 import React, { createContext, useState, useContext } from 'react'
-//import { db } from '../firebase'
+import { toast } from 'react-toastify';
+
 
 export const contexto = createContext()
 
@@ -14,60 +15,80 @@ const CustomProvider = ({children}) => {
 
     const [carrito, setCarrito] = useState([])
     const [total, setTotal] = useState(0)
-    const [cantidadTotal, setCantidadTotal] = useState(0)
-
-        
-
-        const vaciarCarrito = ()=>{
-          setCarrito([])
-          setCantidadTotal(0)
-          
     
-        }
 
-        const agregarProducto = (producto, cantidad) =>{
-          
-          if(isInCart(producto, cantidad)){
-          setCarrito(carrito.map(product =>{
-            return product.id === producto.id ? {...product, cantidad: product.cantidad +cantidad } : product
-          }))
-
-          }else{
-            console.log("producto nuevo en el carrito")
         
-            setCarrito([
-                ...carrito, 
-                {...producto, cantidad }
-            ])
-
-          setTotal(total + producto.precio * cantidad)
-          setCantidadTotal(cantidadTotal + cantidad)
-
+        const agregarProducto = (productToAdd, cantidad) => {
+          const newObj = {
+            ...productToAdd,
+            cantidad
           }
-
-        }
+          if(isInCart(newObj.productId)){
+            carrito.map(el => {
+                if(el.productId === newObj.productId)  {
+                  el.cantidad += newObj.cantidad
+                }
+                return(el)
+                })
         
+            }else {
+              setCarrito([...carrito, newObj])
+            }
+          }
         const isInCart = (id) =>{
             return carrito.find(product => product.id ===id) ? true : false;
         }
 
 
-        
+        const cantidadTotal = () => {
+          let count = 0
+          carrito.forEach(prod => {
+              count = count + prod.cantidad
+          })
+          return count
+      }
 
-        const borrarItem = (id) =>{
-          const deleteItem = carrito.filter(el => el.id !== id)
-          setCarrito([deleteItem])
+       const borrarItem = (id) =>{
+          const deleteItem = carrito.filter(el => el.productId !== id)
+          setCarrito([...deleteItem])
 
+          toast.success('Producto eliminado con exito', {
+            position: "top-center",
+            autoClose: false,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+        }
+
+        const vaciarCarrito = ()=>{
+          toast.success('Carrito vacio', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: true,
+            closeOnClick: false,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+              setCarrito([])
+
+            
         }
     
       const valorDelContexto={
         productos: carrito,
         cantidad: total,
         cantidadTotal: cantidadTotal,
-        vaciarCarrito,
         agregarProducto,
         borrarItem,
         isInCart,
+        vaciarCarrito,
+        
         
       }
       console.log(valorDelContexto)
