@@ -8,9 +8,11 @@ import { CountBtnStyled } from '../ItemDetailContainer/ItemDetailsContainerStyle
 
 const CarritoDetails = () => {
 
+   
     const valorDelContexto = useCarrito()
     console.log(valorDelContexto)
 
+    
    
    return (
     <div>
@@ -29,7 +31,7 @@ const CarritoDetails = () => {
                        ${product.precio}
                     </p>
                    
-                    <CountBtnStyled ><BsTrash/></CountBtnStyled>
+                    <CountBtnStyled onClick={valorDelContexto.borrarItem}><BsTrash/></CountBtnStyled>
 
                     
                     </ProductCardContainerCarrito> )

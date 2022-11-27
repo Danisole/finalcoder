@@ -9,7 +9,10 @@ import CheckForm from './Form/CheckForm'
 
 
 
+
 const Carrito = () => {
+
+ 
 
   const valorDelContexto = useCarrito()
 
@@ -34,6 +37,7 @@ const Carrito = () => {
                       
         <CarritoDetails key={valorDelContexto.productos.id} product={valorDelContexto.productos}/> 
         
+
         <CheckoutContainerPriceStyled>
           <CheckoutSubtotalStyled>
             <p>Subtotal</p>
@@ -51,6 +55,7 @@ const Carrito = () => {
             <p>$ {valorDelContexto.cantidad + 300}</p>
           </CheckoutTotalStyled>
         </CheckoutContainerPriceStyled>
+        <BtnStyled onClick={valorDelContexto.vaciarCarrito} style={{marginTop: 40}}>Vaciar Carrito</BtnStyled>
       </CheckoutContainerProductosStyled>
 
       <CheckForm/>

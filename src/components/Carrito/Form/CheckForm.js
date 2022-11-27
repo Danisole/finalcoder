@@ -2,17 +2,11 @@ import { addDoc, collection, getFirestore, serverTimestamp } from 'firebase/fire
 import React, { useRef, useState } from 'react'
 
 import { db } from '../../../firebase'
-import { useCarrito } from '../../CustomProvider'
 import { BtnStyled } from '../../item/ItemStyled'
 
 const CheckForm = () => {
 
-  const valorDelContexto = useCarrito()
-
-  console.log(valorDelContexto)
-
  
-
   const refName = useRef()
   const refPhone = useRef()
   const [ id, setId ] = useState("")

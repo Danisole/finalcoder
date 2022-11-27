@@ -6,14 +6,18 @@ import { Link } from "react-router-dom";
 
 const CartWidget = () => {
 
-  const valorDelContexto = useContext(contexto)
+  const { cantidadTotal } = useContext(contexto)
+
   
   return (
 
     <Link to={"/Carrito"} style={{color:'white', textDecoration: "none"}}>
       
         <BsFillBagFill />
-        {<span>{valorDelContexto.cantidadTotal}</span>}
+      
+        <span>{cantidadTotal}</span>
+        
+        
       
     </Link>
   )

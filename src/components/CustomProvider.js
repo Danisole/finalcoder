@@ -20,7 +20,8 @@ const CustomProvider = ({children}) => {
 
         const vaciarCarrito = ()=>{
           setCarrito([])
-          setTotal(0)
+          setCantidadTotal(0)
+          
     
         }
 
@@ -45,14 +46,18 @@ const CustomProvider = ({children}) => {
           }
 
         }
-        const clearCarrito = () => setCarrito([]);
-
+        
         const isInCart = (id) =>{
             return carrito.find(product => product.id ===id) ? true : false;
         }
 
+
+        
+
         const borrarItem = (id) =>{
-          setCarrito(carrito.filter(product => product.id != id))
+          const deleteItem = carrito.filter(el => el.id !== id)
+          setCarrito([deleteItem])
+
         }
     
       const valorDelContexto={
@@ -60,10 +65,10 @@ const CustomProvider = ({children}) => {
         cantidad: total,
         cantidadTotal: cantidadTotal,
         vaciarCarrito,
-        agregarProducto: agregarProducto,
+        agregarProducto,
         borrarItem,
         isInCart,
-        clearCarrito
+        
       }
       console.log(valorDelContexto)
 

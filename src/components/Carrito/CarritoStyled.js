@@ -14,7 +14,7 @@ export const ContainerCart = styled.div`
 `
 
 export const CheckoutContainerProductosStyled = styled.div`
-  width: 40%;
+  width: 50%;
   
 
 `;
@@ -42,9 +42,9 @@ export const CheckoutHrStyled = styled.hr`
 `;
 export const ContainerCheckoutStyled = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  padding: 10rem 3rem;
+  padding: 10rem 0;
   min-height: 100vh;
 `;
 
