@@ -24,18 +24,18 @@ Para su uso lo primero que deberiamos hacer es dirigirnos al  [Repo](https://git
 1. Realizados los pasos anteriores debemos proceder a instalar las dependencias correspondientes para su correcto uso:
 
 
-*   "@testing-library/jest-dom": "^5.16.5",
-*   "@testing-library/react": "^13.4.0",
-*   "@testing-library/user-event": "^13.5.0",
-*   "firebase": "^9.14.0",
-*   "framer-motion": "^7.6.7",
-*   "react": "^18.2.0",
-*   "react-dom": "^18.2.0",
-*   "react-icons": "^4.6.0",
-*   "react-router-dom": "^6.4.2",
-*   "react-scripts": "5.0.1",
-*   "styled-components": "^5.3.6",
-*   "web-vitals": "^2.1.4"
+*    "@testing-library/jest-dom": "^5.16.5",
+*    "@testing-library/react": "^13.4.0",
+*    "@testing-library/user-event": "^13.5.0",
+*    "firebase": "^9.14.0",
+*    "react": "^18.2.0",
+*    "react-dom": "^18.2.0",
+*    "react-icons": "^4.6.0",
+*    "react-router-dom": "^6.4.2",
+*    "react-scripts": "5.0.1",
+*    "react-toastify": "^9.1.1",
+*    "styled-components": "^5.3.6",
+*    "web-vitals": "^2.1.4"
 
 1. El listado anterior corresponde a los paquetes usados en este proyecto cada uno con su finalidad especifica y sin estar sobrecargado para priorizar el codigo limpio y ordenado.
 
@@ -45,7 +45,8 @@ A continuación se realizara una breve explicacion de los paquetes instaldos y s
 
 *   "firebase": "^9.14.0": Firebase se uso para alojar el array de productos, cumple la función de base de datos en el proyecto y se instalo a traves del comando `npm install firebase` y crearemos en la pagina nuestra base de datos. [Firebase](https://firebase.google.com/?hl=es-419)
 
-*   "framer-motion": "^7.6.7" se uso para darle animacion a los componentes de proyecto como son el modal y los distintos popUp que aparecen. Se uso el comando `npm install framer-motion` para luego importarse a travez de `import { motion } from "framer-motion"` donde estaria listo para su uso. [ Framer-motion](https://www.framer.com/docs/)
+* "react-toastify": "^9.1.1": "^7.6.7" se uso para darle animacion a las nitificaciones de proyecto como lo que hace mucho mas amigable para le usuario ya que sabe que esta pasando y los pasos a seguir. Se uso el comando `npm i react-toastify` para luego importarse a travez de ` import { ToastContainer, toast } from 'react-toastify'` y
+  `import 'react-toastify/dist/ReactToastify.css';` donde estaria listo para su uso. [ react-toastify ](https://www.https://www.npmjs.com/package/react-toastify)
 
 *   "react-icons": "^4.6.0" Este paquete se instalo para tener acceso a una amplia galeria de iconos usados en las diferentes partes del proyecto para identificar funcionalidades no solo a traves de la palabra escrita sino de los simbolos que caracterizan el metalenguaje.
 La instalacion se realizo a traves del comando `npm install react-icons --save ` y luego debe importarse en la seccion donde queramos usarla. [React-icons](https://react-icons.github.io/react-icons).

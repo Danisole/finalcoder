@@ -4,19 +4,20 @@ import logoAppBar from '../assets/img/Logotipo_sushi_moderno_negro-removebg-prev
 import CartWidget from './CartWidget'
 import { GiHamburgerMenu, GiKnifeFork } from "react-icons/gi";
 import { Link } from 'react-router-dom'
-import ModalCart from './ModalCart/ModalCart';
 
 
 
-const PAGES  =[{id: 1, to:"/", link:"Home"},{id: 2, to:"/category/combinados", link:"Combinado"}, {id: 3, to:"/category/tempuras", link:"Tempuras"}, {id: 4, to:"/category/postres&bebidas", link:"Postres y Bebidas"}, {id: 5, to:"/contacto", link:"Contactanos"}]
+
+const PAGES  =[{id: 1, to:"/", link:"Home"},{id: 2, to:"/category/combinados", link:"Combinado"}, {id: 3, to:"/category/tempuras", link:"Tempuras"}, {id: 4, to:"/category/postres&bebidas", link:"Postres y Bebidas"}]
 
 const NavBar = () => {
 
     const [showMobileMenu, setShowMobileMenu ] = useState(false)
+    
   return (
     <Container>
         <Wrapper>
-            <ModalCart/>
+            
             <LogoContainer>
                 <Link to="/">
                     <img src={logoAppBar} alt='logoSushi' style={{ width: 70, height:"auto" }} />

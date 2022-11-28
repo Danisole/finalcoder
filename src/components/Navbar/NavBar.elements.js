@@ -28,7 +28,7 @@ export const Menu = styled.ul`
     list-style: none;
 
     @media screen and (max-width: 960px) {
-        background-color: #343a40 ;
+        background-color: #18191a ;
         position: absolute;
         top: 100px;
         left: ${({open}) => open ? "0" : "-100%"};

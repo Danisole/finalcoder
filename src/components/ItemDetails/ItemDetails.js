@@ -12,12 +12,8 @@ const ItemDetails = ({producto}) => {
   const [cantidad, setCantidad] = useState(1)
   const [confirmado, setConfirmado] = useState(false)
 
-  
-  
-
   const handleOnAdd = (cantidad)=>{
-    console.log("se agrego " + cantidad + " productos")
-    console.log(producto)
+    
     setCantidad(cantidad)
     setConfirmado(true)
   }

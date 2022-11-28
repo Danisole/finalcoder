@@ -31,8 +31,6 @@ function App() {
 
             <Route path='/item/:productId' element={<ItemDetailContainer/>} />
 
-            <Route path='/contacto' element={<p>Contacto</p>} />
-
             <Route path='/Carrito' element={<Carrito />} />
 
             <Route path='*' element={<Error/>} />

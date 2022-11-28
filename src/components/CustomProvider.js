@@ -16,6 +16,7 @@ const CustomProvider = ({children}) => {
     const [carrito, setCarrito] = useState([])
     const [total, setTotal] = useState(0)
     
+    
 
         
         const agregarProducto = (productToAdd, cantidad) => {
@@ -35,6 +36,7 @@ const CustomProvider = ({children}) => {
               setCarrito([...carrito, newObj])
             }
           }
+
         const isInCart = (id) =>{
             return carrito.find(product => product.id ===id) ? true : false;
         }
@@ -79,6 +81,10 @@ const CustomProvider = ({children}) => {
 
             
         }
+
+         const vaciarCartWidget =()=>{
+        setTotal(0)
+      }
     
       const valorDelContexto={
         productos: carrito,
@@ -88,10 +94,12 @@ const CustomProvider = ({children}) => {
         borrarItem,
         isInCart,
         vaciarCarrito,
-        
-        
+        vaciarCartWidget
+       
       }
-      console.log(valorDelContexto)
+
+    
+      
 
   return (
     <Provider value={valorDelContexto}>

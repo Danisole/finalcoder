@@ -1,51 +1,84 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { contexto } from '../CustomProvider'
-import { BtnStyled } from '../item/ItemStyled'
-import { CheckoutContainerPriceStyled, CheckoutContainerProductosStyled,
-          CheckoutSubtotalStyled, ContainerCheckoutStyled, ContainerCart,
-           ProductCardContainerCarrito  } from './CarritoStyled';
+import { CheckoutHrStyled, ContainerCart, ContenedorProducto, ContenedorVacio } from "./CarritoStyled"
+import { BsTrash } from "react-icons/bs";   
 import CheckForm from './Form/CheckForm'
+import { BtnStyled } from '../item/ItemStyled';
+import { CountBtnStyled } from '../ItemDetailContainer/ItemDetailsContainerStyled';
+
+
+
 
 const Carrito = () => {
 
-  const { productos, borrarItem, vaciarCarrito } = useContext(contexto)
+  const { productos, borrarItem, vaciarCarrito, totalPrice } = useContext(contexto)
   console.log(productos)
+  
+  
 
-      if (productos.length > 0 ){
-        return (
-            <ContainerCheckoutStyled>
-              <CheckoutContainerProductosStyled>
-                <h1>Carrito</h1>
+  if (productos.length > 0 ){
+    return (
+        <ContainerCart>
+
+          <div>
+
+             <h1>Carrito</h1>
                 {productos.map(item =>
-                    <ProductCardContainerCarrito style={{marginTop: '5rem'}} key={item.id}>
-
-                        <CheckoutSubtotalStyled>Artículo: {item.title}</CheckoutSubtotalStyled>
-                        <CheckoutSubtotalStyled>Unidades: {item.cantidad}</CheckoutSubtotalStyled>
-                        <CheckoutSubtotalStyled>Subtotal: ${item.precio * item.cantidad}</CheckoutSubtotalStyled>
-                        <CheckoutSubtotalStyled>Envio: Gratis</CheckoutSubtotalStyled>
-                    
-                    
-                        <BtnStyled onClick={()=>borrarItem(item.productId)}>borrar</BtnStyled>
-                        <CheckoutContainerPriceStyled>Total: ${item.precio * item.cantidad}</CheckoutContainerPriceStyled>
-                
-                </ProductCardContainerCarrito>
+                    <article style={{marginTop: '5rem'}} key={item.id}>
+                      <ContenedorProducto>
+                        <h4>{item.title}</h4>
+                        <p>Cantidad:</p>
+                        <p> {item.cantidad}</p>
+                        <p>${item.precio}</p>
+                        <CountBtnStyled  onClick={()=>borrarItem(item.productId)}><BsTrash/></CountBtnStyled>
+                      </ContenedorProducto>
+                      
+ 
+                    </article>
                 )}
-                <div className="checkout">
-                    <BtnStyled  onClick={vaciarCarrito}>Vaciar carrito</BtnStyled>
-                </div>
-            </CheckoutContainerProductosStyled>    
-                
-            </ContainerCheckoutStyled>
+                      <ContenedorProducto>
+                        <p>Envio:</p>
+                        <p> Gratis</p>
+                      </ContenedorProducto>
+                      <CheckoutHrStyled/>
+                      <ContenedorProducto>  
+                        <p>Total:</p>
+                        <p>${totalPrice}</p>
+                      </ContenedorProducto>
+
+                      
+
+                <ContenedorProducto>
+                    <BtnStyled onClick={vaciarCarrito}>Vaciar carrito</BtnStyled>
+                    <BtnStyled>Confirmar compra</BtnStyled>
+                </ContenedorProducto>
+          </div>     
+        <div>
+          <CheckForm/>
+        </div>          
+        </ContainerCart>
+
         )}else {
 
             return(
+<ContainerCart>
+              <ContenedorVacio>
 
-              <ContainerCart>
-                    <h1>No agregaste ningún producto</h1>
+                 <ContenedorProducto>
+                        <p>Envio:</p>
+                        <p> Gratis</p>
+                      </ContenedorProducto>
+
+                     <ContenedorProducto>  
+                        <p>Total:</p>
+                        <p>${productos.cantidad}</p>
+                      </ContenedorProducto>
+
+                     <h1>No agregaste ningún producto</h1>
                      <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>Ir a comprar</Link></BtnStyled>
-                    </ContainerCart>
-            
+              </ContenedorVacio>
+            </ContainerCart>
             )
         }
 }

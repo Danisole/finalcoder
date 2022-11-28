@@ -3,8 +3,9 @@ import React, { useRef, useState } from 'react'
 import { db } from '../../../firebase'
 import { useCarrito } from '../../CustomProvider'
 import { BtnStyled } from '../../item/ItemStyled'
-import { ContainerForm } from './FormStyled'
+import { ContainerForm, InputForm, ContenedorForm, FormStyle } from './FormStyled'
 import { toast } from 'react-toastify';
+
 
 
 const CheckForm = () => {
@@ -61,17 +62,20 @@ const CheckForm = () => {
             
                 {id ? <h4> Orden generada con exito, su numero de orden es # {id}</h4> : null}
         
-          <div>      
-                <form onSubmit={handleSubmit}>
-                  <div>
-                    <input ref={refName} type="text" />
-                  </div>
-                  <div>
-                    <input ref={refPhone} type="text" />
-                  </div>
-                  <BtnStyled onClick={valorDelContexto.vaciarCheckOut}>Finalizar Compra</BtnStyled>
-                </form>
-              </div> 
+          <ContenedorForm> 
+
+
+            <h3>Formulario de pedido</h3>    
+                <FormStyle onSubmit={handleSubmit}>
+                  
+                  <ContenedorForm>
+                    <InputForm placeholder='Nombre y Apellido' ref={refName} type="text" />
+                  
+                    <InputForm placeholder='Telefono' ref={refPhone} type="text" />
+                  </ContenedorForm>
+                  <BtnStyled onClick={valorDelContexto.vaciarCartWidget} >Finalizar Compra</BtnStyled>
+                </FormStyle>
+          </ContenedorForm> 
         </ContainerForm>
   )
 
