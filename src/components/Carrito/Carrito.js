@@ -12,7 +12,7 @@ import { CountBtnStyled } from '../ItemDetailContainer/ItemDetailsContainerStyle
 
 const Carrito = () => {
 
-  const { productos, borrarItem, vaciarCarrito, totalPrice } = useContext(contexto)
+  const { productos, borrarItem, vaciarCarrito } = useContext(contexto)
   console.log(productos)
   
   
@@ -34,18 +34,18 @@ const Carrito = () => {
                         <CountBtnStyled  onClick={()=>borrarItem(item.productId)}><BsTrash/></CountBtnStyled>
                       </ContenedorProducto>
                       
- 
+                        <ContenedorProducto>
+                          <p>Envio:</p>
+                          <p> Gratis</p>
+                        </ContenedorProducto>
+                        <CheckoutHrStyled/>
+                        <ContenedorProducto>  
+                          <p>Total:</p>
+                          <p>${item.precio * item.cantidad}</p>
+                        </ContenedorProducto>
                     </article>
                 )}
-                      <ContenedorProducto>
-                        <p>Envio:</p>
-                        <p> Gratis</p>
-                      </ContenedorProducto>
-                      <CheckoutHrStyled/>
-                      <ContenedorProducto>  
-                        <p>Total:</p>
-                        <p>${totalPrice}</p>
-                      </ContenedorProducto>
+                     
 
                       
 
@@ -62,7 +62,7 @@ const Carrito = () => {
         )}else {
 
             return(
-<ContainerCart>
+            <ContainerCart>
               <ContenedorVacio>
 
                  <ContenedorProducto>
