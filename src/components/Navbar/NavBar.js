@@ -8,12 +8,11 @@ import { Link } from 'react-router-dom'
 
 
 
-const PAGES  =[{id: 1, to:"/", link:"Home"},{id: 2, to:"/category/combinados", link:"Combinado"}, {id: 3, to:"/category/tempuras", link:"Tempuras"}, {id: 4, to:"/category/postres&bebidas", link:"Postres y Bebidas"}]
+const PAGES  =[{id: 1, to:"/", link:"Home"},{id: 2, to:"/category/combinados", link:"Combinado"}, {id: 3, to:"/category/tempuras", link:"Tempuras"}, {id: 4, to:"/category/postres&bebidas", link:"Postres y Bebidas"}, {id: 5, to:"/Error", link:"Contactanos"}]
 
 const NavBar = () => {
 
     const [showMobileMenu, setShowMobileMenu ] = useState(false)
-    
   return (
     <Container>
         <Wrapper>

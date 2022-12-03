@@ -50,15 +50,23 @@ const CustomProvider = ({children}) => {
           return count
       }
 
+      const precioTotal = () => {
+        let precioContador = 0
+        carrito.forEach(prod => {
+          precioContador = precioContador + prod.precio
+        })
+        return precioContador
+    }
+
        const borrarItem = (id) =>{
           const deleteItem = carrito.filter(el => el.productId !== id)
           setCarrito([...deleteItem])
 
           toast.success('Producto eliminado con exito', {
             position: "top-center",
-            autoClose: false,
-            hideProgressBar: false,
-            closeOnClick: true,
+            autoClose: true,
+            hideProgressBar: true,
+            closeOnClick: false,
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
@@ -94,7 +102,8 @@ const CustomProvider = ({children}) => {
         borrarItem,
         isInCart,
         vaciarCarrito,
-        vaciarCartWidget
+        vaciarCartWidget,
+        precioTotal
        
       }
 

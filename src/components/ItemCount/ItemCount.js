@@ -5,6 +5,7 @@ import { CountBtnStyled } from '../ItemDetailContainer/ItemDetailsContainerStyle
 import { toast } from 'react-toastify';
 
 
+
 const ItemCount = ({handleOnAdd, init, stock}) =>{
 
     const [count, setCount] = useState(parseInt(init))
@@ -22,7 +23,7 @@ const ItemCount = ({handleOnAdd, init, stock}) =>{
     const handlerConfirmar = () =>{
 
         handleOnAdd(count)
-        
+
         toast.info('Agrega los productos al carrito', {
             position: "bottom-right",
             autoClose: 2000,
@@ -44,7 +45,7 @@ const ItemCount = ({handleOnAdd, init, stock}) =>{
                 <p>{count}</p>
                 <CountBtnStyled disabled={count >= stock} onClick={handlerSumar}><BsPlusCircle/></CountBtnStyled>
             </div>
-            <BtnStyled onClick={handlerConfirmar} >Confirmar</BtnStyled>
+            <BtnStyled onClick={handlerConfirmar}>Confirmar</BtnStyled>
         </div>
     )
 }

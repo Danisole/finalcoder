@@ -6,14 +6,19 @@ import { useState } from "react"
 import { toast } from 'react-toastify';
 
 
+
 const ItemDetails = ({producto}) => {
 
   const { agregarProducto } = useCarrito()
   const [cantidad, setCantidad] = useState(1)
   const [confirmado, setConfirmado] = useState(false)
 
+  
+  
+
   const handleOnAdd = (cantidad)=>{
-    
+    console.log("se agrego " + cantidad + " productos")
+    console.log(producto)
     setCantidad(cantidad)
     setConfirmado(true)
   }
@@ -22,7 +27,7 @@ const ItemDetails = ({producto}) => {
     
     agregarProducto(producto, cantidad)
 
-    toast.success('Producto agregado con exito! dirigete al carrito', {
+    toast.success('Producto agregado con exito! Ve al carrito', {
       position: "top-right",
       autoClose: 2000,
       hideProgressBar: true,

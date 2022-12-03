@@ -1,17 +1,11 @@
-import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
+import { addDoc, collection, getFirestore, serverTimestamp } from 'firebase/firestore'
 import React, { useRef, useState } from 'react'
+
 import { db } from '../../../firebase'
-import { useCarrito } from '../../CustomProvider'
 import { BtnStyled } from '../../item/ItemStyled'
-import { ContainerForm, InputForm, ContenedorForm, FormStyle } from './FormStyled'
-import { toast } from 'react-toastify';
-
-
 
 const CheckForm = () => {
 
-  const valorDelContexto = useCarrito()
-    
  
   const refName = useRef()
   const refPhone = useRef()
@@ -41,42 +35,28 @@ const CheckForm = () => {
 
       })
       .catch((error)=>{
-        toast.error('Error', {
-          position: "top-center",
-          autoClose: 3000,
-          hideProgressBar: true,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "dark",
-          });
+        console.log(error)
       })
   }
 
-  
-
   return(
 
-       <ContainerForm>  
+  <>  
             
-                {id ? <h4> Orden generada con exito, su numero de orden es # {id}</h4> : null}
-        
-          <ContenedorForm> 
-
-
-            <h3>Formulario de pedido</h3>    
-                <FormStyle onSubmit={handleSubmit}>
-                  
-                  <ContenedorForm>
-                    <InputForm placeholder='Nombre y Apellido' ref={refName} type="text" />
-                  
-                    <InputForm placeholder='Telefono' ref={refPhone} type="text" />
-                  </ContenedorForm>
-                  <BtnStyled onClick={valorDelContexto.vaciarCartWidget} >Finalizar Compra</BtnStyled>
-                </FormStyle>
-          </ContenedorForm> 
-        </ContainerForm>
+              {id ? <h4> Orden generada con exito, su numero de orden es # {id}</h4> : null}
+       
+        <div>      
+              <form onSubmit={handleSubmit}>
+                <div>
+                  <input ref={refName} type="text" />
+                </div>
+                <div>
+                  <input ref={refPhone} type="text" />
+                </div>
+                <BtnStyled>Finalizar Compra</BtnStyled>
+              </form>
+            </div> 
+        </>
   )
 
     
