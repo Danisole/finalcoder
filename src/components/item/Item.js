@@ -7,9 +7,6 @@ import { ProductosCard, BtnStyled } from './ItemStyled'
 const Item = ({title, img, descripcion, precio, id}) => {
 
   const resultado = useContext(contexto)
-  
-
-  console.log(resultado)
 
   return (
 
