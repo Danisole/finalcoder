@@ -3,10 +3,11 @@ import styled from "styled-components"
 
 export const ContainerCart = styled.div`
     padding: 100px 40px 10px 40px;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 100vh;
-    gap: 100px;
+    
 `
 
 
@@ -26,6 +27,7 @@ flex-direction: row;
 max-width: 380px;
 justify-content: space-between;
 margin: 20px 0;
+gap: 20px
 `
 
 
@@ -37,3 +39,5 @@ flex-direction: column;
 min-height: 100vh;
 gap: 50px
 `
+
+

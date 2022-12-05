@@ -80,9 +80,13 @@ export const LogoCart = styled.div`
     margin-right: 1rem;
     display: flex;
     align-items: center;
-    color: white;
     cursor: pointer;
 
+    &:hover{
+        
+        font-size: 1.5rem;
+        
+    }
 
     span{
         position: absolute;
@@ -99,6 +103,8 @@ export const LogoCart = styled.div`
 `
 export const MobilIcon = styled.div`
     display: none;
+
+    
 
     @media screen and (max-width: 960px){
         display: flex;

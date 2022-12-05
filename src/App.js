@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer";
 import Error from "./components/Error/Error"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ConfirmarCompra from "./components/Confirmacion/ConfirmarCompra"
 
 
 
@@ -17,6 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
 
   return (
+   
   
   <CustomProvider>
 
@@ -31,7 +33,9 @@ function App() {
 
             <Route path='/item/:productId' element={<ItemDetailContainer/>} />
 
-            <Route path='/contacto' element={<p>Contacto</p>} />
+            <Route path='/contacto' element={<Error />} />
+
+            <Route path='/ConfirmarCompra' element={<ConfirmarCompra />} />
 
             <Route path='/Carrito' element={<Carrito />} />
 
@@ -42,6 +46,7 @@ function App() {
       </BrowserRouter>
       
     <ToastContainer/>
+    
     </CustomProvider>
 
   );

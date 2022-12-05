@@ -11,7 +11,7 @@ const Error = () => {
             ERROR 404 NOT FOUND
         </h1>
 
-        <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>GO BACK</Link></BtnStyled>
+        <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>Volver a comprar</Link></BtnStyled>
     </ContenedorError>
   )
 }

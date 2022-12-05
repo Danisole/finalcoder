@@ -2,7 +2,6 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { contexto } from '../CustomProvider'
 import { CheckoutHrStyled, ContainerCart, ContenedorProducto, ContenedorVacio } from "./CarritoStyled"
-import CheckForm from './Form/CheckForm'
 import { BtnStyled } from '../item/ItemStyled';
 import CarritoDetails from './CarritoDetails'
 
@@ -37,12 +36,11 @@ const Carrito = () => {
 
                 <ContenedorProducto>
                     <BtnStyled onClick={vaciarCarrito}>Vaciar carrito</BtnStyled>
-                    <BtnStyled>Confirmar compra</BtnStyled>
+                    <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>Seguir comprando</Link></BtnStyled>
+                    <BtnStyled><Link to="/ConfirmarCompra" style={{color:'white', textDecoration: "none"}}>Confirmar compra</Link></BtnStyled>
+                    
                 </ContenedorProducto>
-          </div>     
-        <div>
-          <CheckForm/>
-        </div>          
+          </div>              
         </ContainerCart>
         )}else {
 
