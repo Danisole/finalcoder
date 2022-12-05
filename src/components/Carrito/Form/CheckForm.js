@@ -1,29 +1,31 @@
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore'
-import React, { useRef, useState } from 'react'
+import React, { useState } from 'react'
 import { db } from '../../../firebase'
 import { BtnStyled } from '../../item/ItemStyled'
 import { useContext } from 'react'
 import { contexto } from '../../CustomProvider'
 import { useForm } from "react-hook-form";
-import { LabelForm, InputForm } from './FormStyled'
+import { LabelForm, InputForm, TextStyled, CopyButton } from './FormStyled'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { toast } from 'react-toastify';
+
 
 
 
 const CheckForm = () => {
 
-  const { productos, precioTotal, vaciarCartWidget } = useContext(contexto)
+  const { productos, precioTotal, vaciarCarrito } = useContext(contexto)
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
  
-  // const refName = useRef()
-  // const refPhone = useRef()
-  // const refEmail = useRef()
-  // const refAddres = useRef()
+
   const [ id, setId ] = useState("");
 
   const onSubmit = (data) =>{
+
     reset()
-    vaciarCartWidget()
-    console.log(data)
+    vaciarCarrito()
+
+    
 
       const orden = {
 
@@ -48,18 +50,32 @@ const CheckForm = () => {
           
       })
       .catch((error)=>{
-        console.log(error)
+        toast.error(error)
       })
 
-      
-
   }
+
+  const alertaCopy =()=>{
+    toast.success('Numero de oden copiado', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+  } 
 
   return(
 
   <>  
             
-              {id ? <h4> Orden generada con exito, su numero de orden es # {id}  precio total {precioTotal()}</h4> : null}
+            <div>
+               {id ? <TextStyled><h3> Orden generada con exito</h3> <h4>Su numero de orden es <CopyToClipboard><CopyButton onClick={()=> alertaCopy()}># {id}</CopyButton></CopyToClipboard></h4></TextStyled> : null}
+
+            </div>
        
         <div>
           <h2>Formulario de compra</h2>      
@@ -83,6 +99,8 @@ const CheckForm = () => {
                   <LabelForm>Email</LabelForm>
                   <InputForm {...register('refEmail', { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })} type="text" placeholder='Email'/>
                   {errors.refEmail?.type === "pattern" && <p style={{color:"red"}}>El formato del mail es incorrecto</p>}
+                  {errors.refEmail?.type === "required" && <p style={{color:"red"}}>El Email es requerido</p>}
+
                 </div>
 
                 <div>
@@ -91,7 +109,7 @@ const CheckForm = () => {
                     {errors.refAddres?.type === "required" && <p style={{color:"red"}}>La direccion es requerida</p>}
                   </div>
                 
-                <BtnStyled >Finalizar Compra</BtnStyled>
+                <BtnStyled>Finalizar Compra</BtnStyled>
               </form>
             </div> 
 

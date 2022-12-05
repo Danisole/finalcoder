@@ -33,8 +33,6 @@ const ItemDetailContainer = () => {
       <ItemDetails producto={{productId, ...item}}/> 
     </ContenedorDetails>
     
-       
-    
   )
 }
 

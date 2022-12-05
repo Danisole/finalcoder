@@ -28,7 +28,7 @@ const ItemListContainer = () => {
           setItems(productos)
         })
         .catch((error) =>{
-          console.log(error)
+          toast.error(error)
         })
       
 

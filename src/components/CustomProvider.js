@@ -62,9 +62,9 @@ const CustomProvider = ({children}) => {
           const deleteItem = carrito.filter(el => el.productId !== id)
           setCarrito([...deleteItem])
 
-          toast.success('Producto eliminado con exito', {
+          toast.success('Producto eliminado con exito!', {
             position: "top-center",
-            autoClose: true,
+            autoClose: 2000,
             hideProgressBar: true,
             closeOnClick: false,
             pauseOnHover: true,

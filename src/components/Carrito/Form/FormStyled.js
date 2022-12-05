@@ -33,3 +33,22 @@ export const ContainerResum = styled.div`
     min-height: 100vh;
     
 `
+export const TextStyled = styled.div`
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    h4, h3{
+        margin: 20px 0;
+    }
+    
+
+`
+export const CopyButton = styled.button`
+    background: none;
+    border-color: red;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+`

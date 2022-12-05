@@ -6,7 +6,7 @@ export const ContainerFooter = styled.footer`
     position: absolute;
     margin-bottom: 0;
     width: 100%;
-    height: 60px;
+    height: 90px;
     padding: 5px 10px;
     margin-top: 20px;
     background-color: #18191a;
@@ -16,7 +16,17 @@ export const ContainerFooter = styled.footer`
     justify-content: flex-end;
 
     p{
-        font-size: 10px;
+        font-size: 13px;
+        margin: 5px 0;
+        
+    }
+    a{
+        cursor: pointer;
+        color: white;
+
+        &:hover{
+            color: red;
+        }
     }
     
 `

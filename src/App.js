@@ -10,7 +10,7 @@ import Error from "./components/Error/Error"
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ConfirmarCompra from "./components/Confirmacion/ConfirmarCompra"
-
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 
 
@@ -46,6 +46,12 @@ function App() {
       </BrowserRouter>
       
     <ToastContainer/>
+    <FloatingWhatsApp  phoneNumber="+5592646890"
+        accountName="Danisol"
+        allowEsc
+        allowClickAway
+        notification
+        notificationSound/>
     
     </CustomProvider>
 

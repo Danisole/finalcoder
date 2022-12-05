@@ -85,6 +85,7 @@ export const LogoCart = styled.div`
     &:hover{
         
         font-size: 1.5rem;
+        transition: 0.3 ease-in-out;
         
     }
 
