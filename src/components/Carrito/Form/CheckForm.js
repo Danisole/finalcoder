@@ -73,7 +73,7 @@ const CheckForm = () => {
   <>  
             
             <div>
-               {id ? <TextStyled><h3> Orden generada con exito</h3> <h4>Su numero de orden es <CopyToClipboard><CopyButton onClick={()=> alertaCopy()}># {id}</CopyButton></CopyToClipboard></h4></TextStyled> : null}
+               {id ? <TextStyled><h3> Orden generada con exito</h3> <h4>Su numero de orden es <CopyToClipboard text={id}><CopyButton onClick={()=> alertaCopy()}># {id}</CopyButton></CopyToClipboard></h4><h5>Con un click copia tu numero de orden</h5></TextStyled> : null}
 
             </div>
        
@@ -97,7 +97,7 @@ const CheckForm = () => {
 
                 <div>
                   <LabelForm>Email</LabelForm>
-                  <InputForm {...register('refEmail', { pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })} type="text" placeholder='Email'/>
+                  <InputForm {...register('refEmail', { required:true,  pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i })} type="text" placeholder='Email'/>
                   {errors.refEmail?.type === "pattern" && <p style={{color:"red"}}>El formato del mail es incorrecto</p>}
                   {errors.refEmail?.type === "required" && <p style={{color:"red"}}>El Email es requerido</p>}
 
