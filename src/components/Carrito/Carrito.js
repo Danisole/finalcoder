@@ -48,7 +48,7 @@ const Carrito = () => {
             return(
             
               <ContenedorVacio>
-                <h1>No agregaste ningún producto</h1>
+                <h2>No agregaste ningún producto</h2>
                 <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>Ir a comprar</Link></BtnStyled>
               </ContenedorVacio>
             
