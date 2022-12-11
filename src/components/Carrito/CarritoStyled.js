@@ -3,9 +3,11 @@ import styled from "styled-components"
 
 export const ContainerCart = styled.div`
     padding: 100px 40px 10px 40px;
-    display: flex;
-    align-items: center;
+    display: grid;
+    place-items: center;
     justify-content: center;
+    grid-template-columns:repeat(auto-fit, 400px);
+    row-gap: 3.5rem;
     min-height: 100vh;
     
 `

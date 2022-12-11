@@ -29,7 +29,9 @@ gap: 50px
 export const ContainerResum = styled.div`
     padding: 0 40px 10px 40px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr) ;
+    place-items: center;
+    justify-content: center;
+    grid-template-columns:repeat(auto-fit, 500px);
     min-height: 100vh;
     
 `

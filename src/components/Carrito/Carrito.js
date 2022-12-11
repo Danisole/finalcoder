@@ -19,28 +19,29 @@ const Carrito = () => {
           <div>
              <h1>Carrito</h1>
                 
-            <CarritoDetails/>    
+              <CarritoDetails/>    
 
-            <ContenedorProducto>
-              <p>Envio:</p>
-              <p> Gratis</p>
-            </ContenedorProducto>
+              <ContenedorProducto>
+                <p>Envio:</p>
+                <p> Gratis</p>
+              </ContenedorProducto>
 
-            <CheckoutHrStyled/>
+              <CheckoutHrStyled/>
 
-            <ContenedorProducto>  
-              <p>Total:</p>
-              <p>${precioTotal()}</p>
-            </ContenedorProducto>
+              <ContenedorProducto>  
+                <p>Total:</p>
+                <p>${precioTotal()}</p>
+              </ContenedorProducto>
 
-
+            
                 <ContenedorProducto>
                     <BtnStyled onClick={vaciarCarrito}>Vaciar carrito</BtnStyled>
                     <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>Seguir comprando</Link></BtnStyled>
                     <BtnStyled><Link to="/ConfirmarCompra" style={{color:'white', textDecoration: "none"}}>Confirmar compra</Link></BtnStyled>
                     
                 </ContenedorProducto>
-          </div>              
+              </div>  
+
         </ContainerCart>
         )}else {
 

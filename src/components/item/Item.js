@@ -1,12 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { contexto } from '../CustomProvider'
 import { ProductosCard, BtnStyled } from './ItemStyled'
 
 
 const Item = ({title, img, descripcion, precio, id}) => {
 
-  const resultado = useContext(contexto)
+  
 
   return (
 

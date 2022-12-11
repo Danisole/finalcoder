@@ -8,6 +8,8 @@ import { useForm } from "react-hook-form";
 import { LabelForm, InputForm, TextStyled, CopyButton } from './FormStyled'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
+
 
 
 
@@ -74,7 +76,7 @@ const CheckForm = () => {
             
             <div>
                {id ? <TextStyled><h3> Orden generada con exito</h3> <h4>Su numero de orden es <CopyToClipboard text={id}><CopyButton onClick={()=> alertaCopy()}># {id}</CopyButton></CopyToClipboard></h4><h5>Con un click copia tu numero de orden</h5></TextStyled> : null}
-
+                
             </div>
        
         <div>
@@ -110,6 +112,9 @@ const CheckForm = () => {
                   </div>
                 
                 <BtnStyled>Finalizar Compra</BtnStyled>
+
+                <BtnStyled><Link to="/" style={{color:'white', textDecoration: "none"}}>Volver al Home</Link></BtnStyled>
+
               </form>
             </div> 
 

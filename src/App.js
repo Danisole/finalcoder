@@ -11,6 +11,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ConfirmarCompra from "./components/Confirmacion/ConfirmarCompra"
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
+import OrderSale from "./components/Orders/OrderSale";
 
 
 
@@ -33,7 +34,7 @@ function App() {
 
             <Route path='/item/:productId' element={<ItemDetailContainer/>} />
 
-            <Route path='/contacto' element={<Error />} />
+            <Route path='/orderSale' element={<OrderSale />} />
 
             <Route path='/ConfirmarCompra' element={<ConfirmarCompra />} />
 

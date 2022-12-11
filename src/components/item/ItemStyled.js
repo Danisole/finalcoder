@@ -38,7 +38,8 @@ p{
 
 `
 export const BtnStyled = styled.button` 
-padding: 0.8rem 1.5rem;
+padding: 0.8rem 1rem;
+margin: 0 6px;
 outline: none;
 border: none;
 border-radius: 10px;
