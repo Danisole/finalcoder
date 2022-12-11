@@ -29,7 +29,11 @@ flex-direction: row;
 max-width: 380px;
 justify-content: space-between;
 margin: 20px 0;
-gap: 20px
+gap: 20px,
+
+p{
+  margin: 10px 0;
+}
 `
 
 

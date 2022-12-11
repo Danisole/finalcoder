@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import { collection, getDocs} from "firebase/firestore"
 import { db } from '../../firebase'
 import { ContainerSale } from "./OrderSaleStyled"
@@ -39,17 +38,15 @@ const OrderSale = () => {
 
 
     const handlerSearch=(data)=>{
-        console.log(data)
+        
         setSerch(data)
     }
 
 
-
-   
   return (
 
     <ContainerSale>
-        <h2>Buscador de ordenes de compra</h2>
+        <h2>Mis pedidos</h2>
         <Serch handlerSearch={handlerSearch}/>
         <SerchDetails item={item} serch={serch}/>
     </ContainerSale>

@@ -46,7 +46,7 @@ const Serch = ({handlerSearch}) => {
     
         <form onSubmit={handlerSubmit}>
 
-            <LabelForm>Detalles de tu compra</LabelForm>
+            <LabelForm>Ingresa el N° de tu compra</LabelForm>
             <InputForm  placeholder='# numero de orden' name="id" onChange={handlerChange} value={form.id} />
             <BtnStyled value="Buscar">Buscar</BtnStyled>
 
