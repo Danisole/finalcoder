@@ -71,7 +71,7 @@ La instalacion se realizo a traves del comando `npm install react-icons --save `
 
 *   "react-toastify" paquete usado para mostrar notificaciones en tiempo real y asi poder guiar al usuario en las funciones, a pesar de ser la pagina intuitiva esto se usa para una mejor eperiencia y que asi tenga la confirmacion de lo que esta realizando. Se instalo a travez del comando `npm i react-toastify` se coloca en App el comando ` import { ToastContainer, toast } from 'react-toastify' y 'import 'react-toastify/dist/ReactToastify.css'` y en cada seccion donde queramos usarlo hay que importar `import { toast } from 'react-toastify'` podemos revisar la documentacion para personalizar nuestras notificaciones en [React Toastify](https://www.npmjs.com/package/react-toastify) 
 
-El deply de la app se realizo a traves de Vercel conectado con gitHub  [Unagui Sushi](https://finalcoder.vercel.app/) :sushi:
+### El deploy de la app se realizo a traves de Vercel conectado con gitHub  [Unagui Sushi](https://finalcoder.vercel.app/) :sushi:
 
 Imagenes representativas del proyecto :camera: :
 
