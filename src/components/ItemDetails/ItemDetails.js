@@ -17,8 +17,7 @@ const ItemDetails = ({producto}) => {
   
 
   const handleOnAdd = (cantidad)=>{
-    console.log("se agrego " + cantidad + " productos")
-    console.log(producto)
+    
     setCantidad(cantidad)
     setConfirmado(true)
   }
