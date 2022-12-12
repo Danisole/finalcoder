@@ -25,6 +25,16 @@ const CheckForm = () => {
   const onSubmit = (data) =>{
 
     reset()
+    toast.success('Tu comprafue realizada con exito!', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: true,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
     vaciarCarrito()
 
     
@@ -55,10 +65,11 @@ const CheckForm = () => {
         toast.error(error)
       })
 
+
   }
 
   const alertaCopy =()=>{
-    toast.success('Numero de oden copiado', {
+    toast.success('Numero de orden copiado', {
       position: "top-center",
       autoClose: 2000,
       hideProgressBar: true,
