@@ -8,7 +8,7 @@ export const ContainerSale = styled.div`
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    gap: 10px;
+    gap: 15px;
 `   
 
 export const ContainerDetails = styled(ContainerSale)`
@@ -16,4 +16,5 @@ margin-top: 15px;
 min-height: 0;
 padding: 0;
 align-items: flex-start;
+gap: 10px;
 `

@@ -106,9 +106,7 @@ const CustomProvider = ({children}) => {
         precioTotal
        
       }
-
-    
-      
+   
 
   return (
     <Provider value={valorDelContexto}>
